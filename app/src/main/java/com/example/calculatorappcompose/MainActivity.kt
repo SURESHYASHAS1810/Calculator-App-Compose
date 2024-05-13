@@ -6,13 +6,16 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Divider
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -63,6 +66,9 @@ fun CalculatorScreen(modifier: Modifier = Modifier) {
                 .weight(1f)
                 .padding(16.dp)
         ) {
+            Spacer(modifier = modifier
+                .fillMaxHeight()
+                .weight(1f))
 
             Text(
                 modifier = modifier.fillMaxWidth(),
@@ -86,6 +92,8 @@ fun CalculatorScreen(modifier: Modifier = Modifier) {
             )
 
         }
+
+        Divider(modifier = modifier.padding(vertical = 10.dp))
 
         Column(modifier = modifier.fillMaxWidth()) {
 
@@ -275,7 +283,7 @@ fun CalculatorButton(
     onClick: (String) -> Unit = {}
 ) {
 
-    Button(
+    ElevatedButton(
         modifier = modifier
             .size(71.dp)
             .clip(CircleShape)
